@@ -9,20 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
     <!-- Header Navigation -->
     <header class="header">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">Certicart Solutions</a>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Certicart Solutions Logo" class="logo-img">
+                    <span class="logo-text">Certicart Solutions</span>
+                </a>
                 <nav class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="process.html" class="nav-link">Process</a>
                     <a href="pricing.html" class="nav-link">Pricing</a>
                     <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link nav-quote-btn">Get a Quote</a>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
@@ -36,73 +40,21 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Achieve Global Standards, Boost Your Business Credibility</h1>
-                <p class="hero-subtitle">Fast, Affordable ISO Certification for Indian Businesses - Trusted by 500+ Companies</p>
+            <div class="hero-content" style="max-width: 800px;">
+                <h1 class="hero-title">Achieve Global Standards. Boost Your Business Credibility.</h1>
+                <p class="hero-subtitle">Fast, Affordable ISO Certification for Indian Businesses. Trusted by 500+ Companies for Excellence and Compliance.</p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn-primary">Get Free Consultation</a>
                     <a href="process.html" class="btn-secondary">Learn About Process</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://picsum.photos/seed/iso-certification/600/400" alt="ISO Certification Process" loading="lazy">
-            </div>
         </div>
     </section>
 
-    <!-- Services Overview Section -->
-    <section class="services-overview">
-        <div class="container">
-            <h2 class="section-title">Why Choose Certicart Solutions?</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Expert Consultants</h3>
-                    <p>15+ years of ISO certification experience with Indian regulatory compliance</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">⚡</div>
-                    <h3>Fast Processing</h3>
-                    <p>Average certification in 8-12 weeks - quicker than industry standard</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">💰</div>
-                    <h3>Affordable Pricing</h3>
-                    <p>Transparent pricing with no hidden costs, flexible payment options</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">🌍</div>
-                    <h3>Global Recognition</h3>
-                    <p>Certifications recognized worldwide, helping you expand internationally</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Stats -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Services -->
+    <!-- Core Services -->
     <section class="featured-services">
         <div class="container">
-            <h2 class="section-title">Popular ISO Certifications</h2>
+            <h2 class="section-title">ISO Certification Services</h2>
             <div class="services-list">
                 <div class="service-card">
                     <div class="service-header">
@@ -130,7 +82,7 @@
     </section>
 
     <!-- Trust CTA -->
-    <section class="cta-section bg-light">
+    <section class="cta-section">
         <div class="container">
             <div class="cta-content text-center">
                 <h2 class="cta-title">Ready to Get ISO Certified?</h2>
@@ -151,25 +103,28 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="process.html">Certification Process</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>📧 certicartsolution@gmail.com</p>
-                    <p>📞 +91 70104 37592</p>
-                    <p>📍 Chennai, Tamil Nadu</p>
+                    <p>Email: certicartsolution@gmail.com</p>
+                    <p>Phone: +91 70104 37592</p>
+                    <p>Location: Chennai, Tamil Nadu</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Certicart Solutions. All rights reserved. | ISO Certification Partner</p>
+                <p>&copy; 2026 Certicart Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="back-to-top" aria-label="Back to top">
+        <span>↑</span>
+    </button>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

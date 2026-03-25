@@ -52,6 +52,26 @@ window.addEventListener('scroll', () => {
 });
 
 // ===================================
+// Back to Top Functionality
+// ===================================
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===================================
 // Scroll Animations
 // ===================================
 const observerOptions = {
@@ -184,5 +204,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize any other components
-    console.log('Certicart Solutions website initialized successfully!');
 });

@@ -9,20 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
     <!-- Header Navigation -->
     <header class="header">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">Certicart Solutions</a>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Certicart Solutions Logo" class="logo-img">
+                    <span class="logo-text">Certicart Solutions</span>
+                </a>
                 <nav class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="process.html" class="nav-link">Process</a>
                     <a href="pricing.html" class="nav-link">Pricing</a>
                     <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link nav-quote-btn">Get a Quote</a>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
@@ -65,12 +69,12 @@
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li>✅ ISO 9001:2015 Certification</li>
-                        <li>✅ Gap Analysis & Documentation</li>
-                        <li>✅ Implementation Support</li>
-                        <li>✅ 2 On-site Training Sessions</li>
-                        <li>✅ 1 Main + 1 Certification Audit</li>
-                        <li>✅ 3-Year Certificate & License</li>
+                        <li>ISO 9001:2015 Certification</li>
+                        <li>Gap Analysis & Documentation</li>
+                        <li>Implementation Support</li>
+                        <li>2 On-site Training Sessions</li>
+                        <li>1 Main + 1 Certification Audit</li>
+                        <li>3-Year Certificate & License</li>
                     </ul>
                     <div class="pricing-cta">
                         <a href="contact.html" class="btn-primary">Get Started</a>
@@ -89,13 +93,13 @@
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li>✅ ISO 9001:2015 + ISO 14001:2015 Dual Certification</li>
-                        <li>✅ Comprehensive Gap Analysis</li>
-                        <li>✅ Complete Documentation Suite</li>
-                        <li>✅ 4 On-site Training Sessions</li>
-                        <li>✅ 2 Main + 2 Certification Audits</li>
-                        <li>✅ 3-Year Certificates & Licenses</li>
-                        <li>✅ Annual Surveillance Audit Setup</li>
+                        <li>ISO 9001:2015 + ISO 14001:2015 Dual Certification</li>
+                        <li>Comprehensive Gap Analysis</li>
+                        <li>Complete Documentation Suite</li>
+                        <li>4 On-site Training Sessions</li>
+                        <li>2 Main + 2 Certification Audits</li>
+                        <li>3-Year Certificates & Licenses</li>
+                        <li>Annual Surveillance Audit Setup</li>
                     </ul>
                     <div class="pricing-cta">
                         <a href="contact.html" class="btn-primary">Get Started</a>
@@ -114,15 +118,15 @@
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li>✅ All ISO Standards (Custom Selection)</li>
-                        <li>✅ Enterprise-Grade Implementation</li>
-                        <li>✅ Complete Documentation Suite</li>
-                        <li>✅ Unlimited On-site Training</li>
-                        <li>✅ Multiple Main + Certification Audits</li>
-                        <li>✅ 3-Year Certificates & Licenses</li>
-                        <li>✅ Dedicated Account Manager</li>
-                        <li>✅ Quarterly Business Reviews</li>
-                        <li>✅ Priority Support & Fast Track</li>
+                        <li>All ISO Standards (Custom Selection)</li>
+                        <li>Enterprise-Grade Implementation</li>
+                        <li>Complete Documentation Suite</li>
+                        <li>Unlimited On-site Training</li>
+                        <li>Multiple Main + Certification Audits</li>
+                        <li>3-Year Certificates & Licenses</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Quarterly Business Reviews</li>
+                        <li>Priority Support & Fast Track</li>
                     </ul>
                     <div class="pricing-cta">
                         <a href="contact.html" class="btn-primary">Get Quote</a>
@@ -143,7 +147,6 @@
                 <div class="factor-card">
                     <div class="factor-header">
                         <h3>Organization Size</h3>
-                        <span class="factor-icon">🏢</span>
                     </div>
                     <div class="factor-content">
                         <p>Number of employees and organizational complexity affects documentation and audit requirements.</p>
@@ -167,7 +170,6 @@
                 <div class="factor-card">
                     <div class="factor-header">
                         <h3>ISO Standard</h3>
-                        <span class="factor-icon">📋</span>
                     </div>
                     <div class="factor-content">
                         <p>Each ISO standard has different requirements and audit complexities.</p>
@@ -195,7 +197,6 @@
                 <div class="factor-card">
                     <div class="factor-header">
                         <h3>Location & Industry</h3>
-                        <span class="factor-icon">📍</span>
                     </div>
                     <div class="factor-content">
                         <p>Geographic location and industry-specific requirements may affect costs.</p>
@@ -212,7 +213,6 @@
                 <div class="factor-card">
                     <div class="factor-header">
                         <h3>Current Documentation</h3>
-                        <span class="factor-icon">📚</span>
                     </div>
                     <div class="factor-content">
                         <p>Existing documentation quality and completeness affects implementation time.</p>
@@ -242,32 +242,26 @@
             <h2 class="section-title text-center">What's Included in All Packages?</h2>
             <div class="included-grid">
                 <div class="included-item">
-                    <div class="included-icon">✅</div>
                     <h3>Consulting Services</h3>
                     <p>Expert guidance throughout the certification process</p>
                 </div>
                 <div class="included-item">
-                    <div class="included-icon">📋</div>
                     <h3>Documentation Support</h3>
                     <p>Templates, manuals, and procedure development</p>
                 </div>
                 <div class="included-item">
-                    <div class="included-icon">👥</div>
                     <h3>Training Programs</h3>
                     <p>Staff training and awareness programs</p>
                 </div>
                 <div class="included-item">
-                    <div class="included-icon">🔍</div>
                     <h3>Internal Audits</h3>
                     <p>Preparation audits and corrective action support</p>
                 </div>
                 <div class="included-item">
-                    <div class="included-icon">📄</div>
                     <h3>Certification Audit</h3>
                     <p>Main and certification audit fees included</p>
                 </div>
                 <div class="included-item">
-                    <div class="included-icon">🏆</div>
                     <h3>ISO Certificate</h3>
                     <p>3-year certificate and license</p>
                 </div>
@@ -320,7 +314,6 @@
                             <input type="number" id="cert-cost" placeholder="Enter investment amount">
                             <span class="input-currency">₹</span>
                         </div>
-                        <p class="calculator-help">Your total certification investment</p>
                     </div>
                     <div class="calculator-item">
                         <h4>Annual Benefits</h4>
@@ -328,12 +321,10 @@
                             <input type="number" id="annual-benefits" placeholder="Enter annual savings">
                             <span class="input-currency">₹</span>
                         </div>
-                        <p class="calculator-help">Annual operational savings and benefits</p>
                     </div>
                     <div class="calculator-item">
-                        <h4>Payback Period</h4>
                         <div class="calculate-btn">
-                            <button onclick="calculateROI()">Calculate Payback Period</button>
+                            <button onclick="calculateROI()" class="btn-primary">Calculate Payback Period</button>
                         </div>
                     </div>
                     <div class="calculator-item">
@@ -346,13 +337,13 @@
                         </div>
                         <div class="roi-benefits">
                             <div class="roi-benefit">
-                                💰 <strong>Annual Savings:</strong> <span id="annual-savings">₹1,20,000</span>
+                                <strong>Annual Savings:</strong> <span id="annual-savings">₹1,20,000</span>
                             </div>
                             <div class="roi-benefit">
-                                📈 <strong>Growth Potential:</strong> Access to larger markets
+                                <strong>Growth Potential:</strong> Access to larger markets
                             </div>
                             <div class="roi-benefit">
-                                🎯 <strong>Risk Reduction:</strong> Improved compliance and quality
+                                <strong>Risk Reduction:</strong> Improved compliance and quality
                             </div>
                         </div>
                     </div>
@@ -378,30 +369,33 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Certicart Solutions</h4>
-                    <p>Your trusted partner for ISO certification services across India.</p>
+                    <p>Your trusted partner for ISO certification services across India. Helping businesses achieve global standards since 2008.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="process.html">Certification Process</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>📧 certicartsolution@gmail.com</p>
-                    <p>📞 +91 70104 37592</p>
-                    <p>📍 Chennai, Tamil Nadu</p>
+                    <p>Email: certicartsolution@gmail.com</p>
+                    <p>Phone: +91 70104 37592</p>
+                    <p>Location: Chennai, Tamil Nadu</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Certicart Solutions. All rights reserved. | ISO Certification Partner</p>
+                <p>&copy; 2026 Certicart Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="back-to-top" aria-label="Back to top">
+        <span>↑</span>
+    </button>
     <script src="assets/js/script.js"></script>
     <script>
         // Simple ROI Calculator
