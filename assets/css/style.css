@@ -63,10 +63,14 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-img, svg, video, iframe {
+img, video, iframe {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+svg {
+    flex-shrink: 0;
 }
 
 html {
@@ -226,6 +230,11 @@ h3 { font-size: var(--fs-h3); }
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+}
+
+.header-top-item svg {
+    width: 18px;
+    height: 18px;
 }
 
 .header.scrolled {
@@ -614,6 +623,11 @@ h3 { font-size: var(--fs-h3); }
 .footer a:hover {
     color: #fff;
     padding-left: 5px;
+}
+
+.footer-section p svg {
+    width: 20px;
+    height: 20px;
 }
 
 .footer-bottom {
