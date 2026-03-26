@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
     <!-- Header Navigation -->
     <header class="header">
+        <div class="header-top-bar">
+            <div class="container">
+                <div class="header-top-item d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> certicartsolution@gmail.com
+                </div>
+                <div class="header-top-item d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 70104 37592
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
@@ -22,9 +32,11 @@
                 </a>
                 <nav class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="process.html" class="nav-link">Process</a>
-                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="pricing.html" class="nav-link active">Pricing</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                     <a href="contact.html" class="nav-link nav-quote-btn">Get a Quote</a>
                 </nav>
@@ -38,206 +50,96 @@
     </header>
 
     <!-- Pricing Hero -->
-    <section class="pricing-hero">
+    <section class="hero-sub reveal">
         <div class="container">
-            <div class="pricing-hero-content">
-                <h1 class="pricing-title">Transparent ISO Certification Pricing</h1>
-                <p class="pricing-subtitle">No hidden costs, clear pricing structure for businesses of all sizes</p>
+            <div class="sub-hero-content">
+                <h1>Transparent Pricing</h1>
+                <p>Simple, honest investment for global standards. No hidden fees.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Overview -->
-    <section class="pricing-overview">
+    <!-- Pricing Grid -->
+    <section class="pricing-section reveal">
         <div class="container">
-            <h2 class="section-title">Transparent Pricing Structure</h2>
-            <p class="section-subtitle">We believe in complete transparency. All prices are inclusive and include all necessary services.</p>
-        </div>
-    </section>
-
-    <!-- Pricing Tiers -->
-    <section class="pricing-tiers">
-        <div class="container">
-            <h2 class="section-title text-center">Choose Your Pricing Plan</h2>
+            <h2 class="section-title">Certification Packages</h2>
+            <p class="section-subtitle">Choose the plan that fits your organization's scale and goals.</p>
+            
             <div class="pricing-grid">
-                <div class="pricing-card featured">
+                <!-- Starter -->
+                <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Starter Package</h3>
-                        <div class="pricing-price">
-                            <span class="price-main">₹25,000</span>
-                            <span class="price-period">/3 Years</span>
-                        </div>
+                        <h3>Starter</h3>
+                        <div class="price-value">₹25,000<span>/3 Years</span></div>
                     </div>
                     <ul class="pricing-features">
                         <li>ISO 9001:2015 Certification</li>
-                        <li>Gap Analysis & Documentation</li>
-                        <li>Implementation Support</li>
-                        <li>2 On-site Training Sessions</li>
-                        <li>1 Main + 1 Certification Audit</li>
-                        <li>3-Year Certificate & License</li>
+                        <li>Standard Documentation</li>
+                        <li>Remote Audit Support</li>
+                        <li>Email Support</li>
                     </ul>
-                    <div class="pricing-cta">
-                        <a href="contact.html" class="btn-primary">Get Started</a>
-                    </div>
-                    <div class="pricing-note">
-                        <p>Most popular - Perfect for small businesses</p>
-                    </div>
+                    <a href="contact.html" class="btn-primary">Choose Plan</a>
                 </div>
 
-                <div class="pricing-card">
+                <!-- Professional -->
+                <div class="pricing-card featured">
                     <div class="pricing-header">
-                        <h3>Professional Package</h3>
-                        <div class="pricing-price">
-                            <span class="price-main">₹45,000</span>
-                            <span class="price-period">/3 Years</span>
-                        </div>
+                        <h3>Professional</h3>
+                        <div class="price-value">₹45,000<span>/3 Years</span></div>
                     </div>
                     <ul class="pricing-features">
-                        <li>ISO 9001:2015 + ISO 14001:2015 Dual Certification</li>
-                        <li>Comprehensive Gap Analysis</li>
-                        <li>Complete Documentation Suite</li>
-                        <li>4 On-site Training Sessions</li>
-                        <li>2 Main + 2 Certification Audits</li>
-                        <li>3-Year Certificates & Licenses</li>
-                        <li>Annual Surveillance Audit Setup</li>
+                        <li>ISO 9001 + ISO 14001</li>
+                        <li>Custom Documentation</li>
+                        <li>On-site Implementation</li>
+                        <li>Priority Support</li>
+                        <li>Internal Auditor Training</li>
                     </ul>
-                    <div class="pricing-cta">
-                        <a href="contact.html" class="btn-primary">Get Started</a>
-                    </div>
-                    <div class="pricing-note">
-                        <p>Great value - Multiple certifications</p>
-                    </div>
+                    <a href="contact.html" class="btn-primary">Choose Plan</a>
                 </div>
 
+                <!-- Enterprise -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Enterprise Package</h3>
-                        <div class="pricing-price">
-                            <span class="price-main">Custom</span>
-                            <span class="price-period">/3 Years</span>
-                        </div>
+                        <h3>Enterprise</h3>
+                        <div class="price-value">Custom</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>All ISO Standards (Custom Selection)</li>
-                        <li>Enterprise-Grade Implementation</li>
-                        <li>Complete Documentation Suite</li>
-                        <li>Unlimited On-site Training</li>
-                        <li>Multiple Main + Certification Audits</li>
-                        <li>3-Year Certificates & Licenses</li>
+                        <li>Multi-site Certification</li>
+                        <li>All ISO Standards</li>
                         <li>Dedicated Account Manager</li>
-                        <li>Quarterly Business Reviews</li>
-                        <li>Priority Support & Fast Track</li>
+                        <li>Unlimited Training</li>
+                        <li>Fast-Track Implementation</li>
                     </ul>
-                    <div class="pricing-cta">
-                        <a href="contact.html" class="btn-primary">Get Quote</a>
-                    </div>
-                    <div class="pricing-note">
-                        <p>Tailored for large organizations</p>
-                    </div>
+                    <a href="contact.html" class="btn-secondary">Get Quote</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Pricing Factors -->
-    <section class="pricing-factors">
+    <!-- Factors Section -->
+    <section class="factors-section bg-subtle reveal">
         <div class="container">
-            <h2 class="section-title text-center">What Influences Pricing?</h2>
-            <div class="factors-grid">
-                <div class="factor-card">
-                    <div class="factor-header">
-                        <h3>Organization Size</h3>
-                    </div>
-                    <div class="factor-content">
-                        <p>Number of employees and organizational complexity affects documentation and audit requirements.</p>
-                        <div class="factor-range">
-                            <div class="factor-item">
-                                <h4>Small (≤50)</h4>
-                                <div class="price-mini">₹15,000 - ₹25,000</div>
-                            </div>
-                            <div class="factor-item">
-                                <h4>Medium (51-500)</h4>
-                                <div class="price-mini">₹25,000 - ₹45,000</div>
-                            </div>
-                            <div class="factor-item">
-                                <h4>Large (500+)</h4>
-                                <div class="price-mini">₹45,000 - ₹80,000</div>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="section-title">What Influences Cost?</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Employee Count</h3>
+                    <p>The scale of your workforce determines the depth of the audit process.</p>
                 </div>
-
-                <div class="factor-card">
-                    <div class="factor-header">
-                        <h3>ISO Standard</h3>
-                    </div>
-                    <div class="factor-content">
-                        <p>Each ISO standard has different requirements and audit complexities.</p>
-                        <div class="standard-list">
-                            <div class="standard-item">
-                                <h4>ISO 9001:2015</h4>
-                                <div class="price-mini">Most common</div>
-                            </div>
-                            <div class="standard-item">
-                                <h4>ISO 14001:2015</h4>
-                                <div class="price-mini">Environmental focus</div>
-                            </div>
-                            <div class="standard-item">
-                                <h4>ISO 27001:2022</h4>
-                                <div class="price-mini">Information security</div>
-                            </div>
-                            <div class="standard-item">
-                                <h4>ISO 45001:2018</h4>
-                                <div class="price-mini">Health & safety</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-item">
+                    <h3>Operations</h3>
+                    <p>Complexity of business processes influences the implementation timeline.</p>
                 </div>
-
-                <div class="factor-card">
-                    <div class="factor-header">
-                        <h3>Location & Industry</h3>
-                    </div>
-                    <div class="factor-content">
-                        <p>Geographic location and industry-specific requirements may affect costs.</p>
-                        <div class="industry-tags">
-                            <div class="industry-tag">Manufacturing</div>
-                            <div class="industry-tag">IT/Software</div>
-                            <div class="industry-tag">Healthcare</div>
-                            <div class="industry-tag">Education</div>
-                            <div class="industry-tag">Services</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="factor-card">
-                    <div class="factor-header">
-                        <h3>Current Documentation</h3>
-                    </div>
-                    <div class="factor-content">
-                        <p>Existing documentation quality and completeness affects implementation time.</p>
-                        <div class="documentation-levels">
-                            <div class="doc-level">
-                                <h5>Good Documentation</h5>
-                                <p>Reduces timeline and cost</p>
-                            </div>
-                            <div class="doc-level">
-                                <h5>Partial Documentation</h5>
-                                <p>Moderate effort required</p>
-                            </div>
-                            <div class="doc-level">
-                                <h5>No Documentation</h5>
-                                <p>Full implementation needed</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-item">
+                    <h3>Standards</h3>
+                    <p>Specific requirements vary between standards like ISO 9001 vs ISO 27001.</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- What's Included -->
-    <section class="included-section">
+    <section class="included-section reveal">
         <div class="container">
             <h2 class="section-title text-center">What's Included in All Packages?</h2>
             <div class="included-grid">
@@ -270,7 +172,7 @@
     </section>
 
     <!-- Payment Options -->
-    <section class="payment-section">
+    <section class="payment-section reveal">
         <div class="container">
             <h2 class="section-title text-center">Flexible Payment Options</h2>
             <div class="payment-options">
@@ -303,7 +205,7 @@
     </section>
 
     <!-- ROI Calculator -->
-    <section class="roi-section bg-light">
+    <section class="roi-section bg-light reveal">
         <div class="container">
             <h2 class="section-title text-center">Calculate Your ROI</h2>
             <div class="roi-calculator">
@@ -353,7 +255,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section reveal">
         <div class="container">
             <div class="cta-content text-center">
                 <h2 class="cta-title">Ready to Invest in Quality?</h2>
@@ -369,22 +271,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Certicart Solutions</h4>
-                    <p>Your trusted partner for ISO certification services across India. Helping businesses achieve global standards since 2008.</p>
+                    <p>Your trusted partner for ISO certification services across India. Achieving excellence since 2016.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Navigation</h4>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="process.html">Process</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>Email: certicartsolution@gmail.com</p>
-                    <p>Phone: +91 70104 37592</p>
-                    <p>Location: Chennai, Tamil Nadu</p>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="pricing.html">Pricing Plans</a></li>
+                        <li><a href="faq.html">Common FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="display: flex; align-items: center; margin-bottom: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> certicartsolution@gmail.com</p>
+                    <p style="display: flex; align-items: center; margin-bottom: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 70104 37592</p>
+                    <p style="display: flex; align-items: center; margin-bottom: 0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Chennai, Tamil Nadu</p>
                 </div>
             </div>
             <div class="footer-bottom">

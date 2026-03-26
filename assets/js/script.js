@@ -1,4 +1,20 @@
 // ===================================
+// Header Scroll & Dynamic States
+// ===================================
+const header = document.querySelector('.header');
+
+const handleHeaderScroll = () => {
+    if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+};
+
+window.addEventListener('scroll', handleHeaderScroll);
+handleHeaderScroll(); // Check on load
+
+// ===================================
 // Mobile Menu Toggle
 // ===================================
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -9,7 +25,7 @@ mobileMenuToggle.addEventListener('click', () => {
     mobileMenuToggle.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
+// Close mobile menu when clicking on a link or hitting Escape
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -17,38 +33,86 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// ===================================
-// Smooth Scroll for Anchor Links
-// ===================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+    }
 });
 
 // ===================================
-// Header Scroll Effect
+// Reveal Animations (Final Professional Logic)
 // ===================================
-let lastScroll = 0;
-const header = document.querySelector('.header');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            
+            // Staggered children reveal
+            const staggeredChildren = el.querySelectorAll('.service-item, .service-card, .footer-section, .step-detail, .faq-item');
+            
+            if (staggeredChildren.length > 0) {
+                staggeredChildren.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.classList.add('active');
+                        if (child.classList.contains('reveal')) child.classList.add('active');
+                    }, index * 100); 
+                });
+            }
+            
+            el.classList.add('active');
+            revealObserver.unobserve(el);
+        }
+    });
+}, {
+    threshold: 0.05, // Trigger earlier
+    rootMargin: '0px'
+});
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// Initialize and handle above-the-fold elements
+const initReveal = () => {
+    // Reveal group triggers
+    document.querySelectorAll('.services-grid, .services-list, .footer-content, .process-steps, .faq-grid').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
 
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
-    }
+    // Individual reveal triggers
+    document.querySelectorAll('.reveal').forEach(el => {
+        // Immediate reveal if in viewport on load
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('active');
+            // Also reveal children
+            el.querySelectorAll('.service-item, .service-card, .footer-section, .step-detail, .faq-item').forEach((child, index) => {
+                setTimeout(() => child.classList.add('active'), index * 100);
+            });
+            return; // No need to observe
+        }
+        revealObserver.observe(el);
+    });
+};
 
-    lastScroll = currentScroll;
+// ===================================
+// FAQ Accordion Logic
+// ===================================
+const initFAQ = () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) otherItem.classList.remove('active-faq');
+            });
+            item.classList.toggle('active-faq');
+        });
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initReveal();
+    initFAQ();
 });
 
 // ===================================
@@ -57,10 +121,14 @@ window.addEventListener('scroll', () => {
 const backToTopBtn = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 400) {
         backToTopBtn.style.display = 'flex';
+        backToTopBtn.style.opacity = '1';
     } else {
-        backToTopBtn.style.display = 'none';
+        backToTopBtn.style.opacity = '0';
+        setTimeout(() => {
+            if (window.scrollY <= 400) backToTopBtn.style.display = 'none';
+        }, 300);
     }
 });
 
@@ -72,136 +140,23 @@ backToTopBtn.addEventListener('click', () => {
 });
 
 // ===================================
-// Scroll Animations
+// Smooth Scroll for Internal Anchor Links
 // ===================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    if (anchor.getAttribute('href') === '#') return;
+    
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         }
     });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-item, .stat-item, .team-member, .value-item');
-
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // Add style for animation
-    const style = document.createElement('style');
-    style.textContent = `
-        .service-item.animate-in,
-        .stat-item.animate-in,
-        .team-member.animate-in,
-        .value-item.animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-});
-
-// ===================================
-// Form Validation (for contact forms)
-// ===================================
-function validateForm(formId) {
-    const form = document.getElementById(formId);
-    if (!form) return false;
-
-    const inputs = form.querySelectorAll('input[required], textarea[required]');
-    let isValid = true;
-
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            input.classList.add('error');
-            isValid = false;
-        } else {
-            input.classList.remove('error');
-        }
-
-        // Email validation
-        if (input.type === 'email' && input.value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value)) {
-                input.classList.add('error');
-                isValid = false;
-            }
-        }
-    });
-
-    return isValid;
-}
-
-// ===================================
-// Add active state to navigation based on scroll position
-// ===================================
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink.classList.add('active');
-        } else {
-            navLink.classList.remove('active');
-        }
-    });
-});
-
-// ===================================
-// Lazy Loading Images
-// ===================================
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// ===================================
-// Add keyboard navigation support
-// ===================================
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-    }
-});
-
-// ===================================
-// Initialize on DOMContentLoaded
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Add smooth reveal animation to all sections
-    document.querySelectorAll('section').forEach((section, index) => {
-        section.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Initialize any other components
 });
