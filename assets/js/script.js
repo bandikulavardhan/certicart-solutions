@@ -19,24 +19,47 @@ handleHeaderScroll(); // Check on load
 // ===================================
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const headerEl = document.querySelector('.header');
 
-mobileMenuToggle.addEventListener('click', () => {
+// Create overlay
+const menuOverlay = document.createElement('div');
+menuOverlay.classList.add('menu-overlay');
+if (headerEl) {
+    headerEl.appendChild(menuOverlay);
+}
+
+const toggleMenu = () => {
     navMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
-});
+    menuOverlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+};
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+}
+if (menuOverlay) {
+    menuOverlay.addEventListener('click', toggleMenu);
+}
 
 // Close mobile menu when clicking on a link or hitting Escape
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
+        if (navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 });
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+        toggleMenu();
     }
 });
 

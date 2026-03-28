@@ -826,33 +826,68 @@ h3 { font-size: var(--fs-h3); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 @media (max-width: 1024px) {
-    .nav-menu { display: none; }
-    .mobile-menu-toggle { display: flex; }
-    
-    .nav-menu.active {
-        display: flex;
+    .nav-menu {
         position: fixed;
-        inset: 0;
+        top: 0;
+        right: -100%;
+        width: 85vw;
+        max-width: 400px;
+        height: 100vh;
+        height: 100dvh;
         background: var(--bg-main);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: var(--space-4);
         z-index: 2000;
-        padding: var(--space-8);
+        padding: 100px var(--space-8) var(--space-8);
         overflow-y: auto;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+        display: flex;
+        box-shadow: none;
     }
     
-    .nav-menu.active .nav-link {
-        font-size: 1.5rem;
+    .nav-menu.active {
+        right: 0;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu .nav-link {
+        font-size: 1.25rem;
         opacity: 1;
         min-height: 48px;
         display: flex;
         align-items: center;
         padding: 0.5rem 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 2005;
     }
     
     .footer-content { grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 @media (max-width: 768px) {
